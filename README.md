@@ -199,7 +199,6 @@ The best way to contact the developers is on Discord.
 
 ### See you ingame.
 
-
 [nodejs]: https://nodejs.org/en/ 'Node.js'
 [vscode]: https://code.visualstudio.com/ 'Visual Studio Code'
 [mainprocess]: https://electronjs.org/docs/tutorial/application-architecture#main-and-renderer-processes 'Main Process'
