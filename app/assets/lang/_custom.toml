@@ -11,8 +11,8 @@ mediaYouTubeURL = "#"
 mediaDiscordURL = "https://discord.gg/MYw5BUmNSV"
 
 [ejs.settings]
-sourceGithubLink = "https://github.com/Shibetendo64/ShibaboxLauncher"
-supportLink = "https://github.com/Shibetendo64/ShibaboxLauncher/issues"
+sourceGithubLink = "https://github.com/dscalzi/HeliosLauncher"
+supportLink = "https://github.com/dscalzi/HeliosLauncher/issues"
 
 [ejs.welcome]
 welcomeHeader = "WELCOME TO SHIBABOX"
