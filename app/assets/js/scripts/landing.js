@@ -51,11 +51,9 @@ const loggerLanding = LoggerUtil.getLogger('Landing')
  */
 function toggleLaunchArea(loading){
     if(loading){
-        launch_details.style.display = 'flex'
-        launch_content.style.display = 'none'
+        launch_details.style.display = 'block'
     } else {
         launch_details.style.display = 'none'
-        launch_content.style.display = 'inline-flex'
     }
 }
 
@@ -134,7 +132,7 @@ document.getElementById('settingsMediaButton').onclick = async e => {
 }
 
 // Bind avatar overlay button.
-document.getElementById('avatarOverlay').onclick = async e => {
+document.getElementById('accountContainer').onclick = async e => {
     await prepareSettings()
     switchView(getCurrentView(), VIEWS.settings, 500, 500, () => {
         settingsNavItemListener(document.getElementById('settingsNavAccount'), false)
@@ -149,7 +147,7 @@ function updateSelectedAccount(authUser){
             username = authUser.displayName
         }
         if(authUser.uuid != null){
-            document.getElementById('avatarContainer').style.backgroundImage = `url('https://mc-heads.net/body/${authUser.uuid}/right')`
+            document.getElementById('avatarContainer').style.backgroundImage = `url('https://mc-heads.net/avatar/${authUser.uuid}')`
         }
     }
     user_text.innerHTML = username
@@ -163,15 +161,16 @@ function updateSelectedServer(serv){
     }
     ConfigManager.setSelectedServer(serv != null ? serv.rawServer.id : null)
     ConfigManager.save()
-    server_selection_button.innerHTML = '&#8226; ' + (serv != null ? serv.rawServer.name : Lang.queryJS('landing.noSelection'))
+    server_selection_button.innerHTML = (serv != null ? serv.rawServer.name : Lang.queryJS('landing.noSelection'))
+    document.getElementById('selected_server_icon').src = (serv != null ? serv.rawServer.icon : 'assets/img/SealCircle.png')
     if(getCurrentView() === VIEWS.settings){
         animateSettingsTabRefresh()
     }
     setLaunchEnabled(serv != null)
 }
 // Real text is set in uibinder.js on distributionIndexDone.
-server_selection_button.innerHTML = '&#8226; ' + Lang.queryJS('landing.selectedServer.loading')
-server_selection_button.onclick = async e => {
+server_selection_button.innerHTML = Lang.queryJS('landing.selectedServer.loading')
+document.getElementById('server_selection_container').onclick = async e => {
     e.target.blur()
     await toggleServerSelection(true)
 }

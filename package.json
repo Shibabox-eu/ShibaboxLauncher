@@ -13,6 +13,8 @@
   "main": "index.js",
   "scripts": {
     "start": "electron .",
+    "dev": "concurrently \"npm:watchtw\" \"cross-env NODE_ENV=development electron .\"",
+    "watchtw": "npx tailwindcss -i ./app/assets/css/launcherTW.css -o ./app/assets/css/launcher.css --watch",
     "dist": "electron-builder build",
     "dist:win": "npm run dist -- -w",
     "dist:mac": "npm run dist -- -m",
@@ -25,6 +27,8 @@
   "dependencies": {
     "@electron/remote": "^2.1.2",
     "adm-zip": "^0.5.9",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
     "discord-rpc-patch": "^4.0.1",
     "ejs": "^3.1.9",
     "ejs-electron": "^3.0.0",
@@ -42,7 +46,9 @@
   "devDependencies": {
     "electron": "^29.1.0",
     "electron-builder": "^24.13.3",
-    "eslint": "^8.57.0"
+    "electron-reloader": "^1.2.3",
+    "eslint": "^8.57.0",
+    "tailwindcss": "^3.4.1"
   },
   "repository": {
     "type": "git",

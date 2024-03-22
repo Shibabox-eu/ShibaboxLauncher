@@ -68,7 +68,8 @@ async function showMainUI(data){
     updateSelectedServer(data.getServerById(ConfigManager.getSelectedServer()))
     refreshServerStatus()
     setTimeout(() => {
-        document.getElementById('frameBar').style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+        document.getElementById('frameBar').style.backgroundColor = 'rgba(2, 6, 23, 0.7)'
+        document.getElementById('frameBarLogo').style.opacity = '100'
         document.body.style.backgroundImage = `url('assets/images/backgrounds/${document.body.getAttribute('bkid')}.jpg')`
         $('#main').show()
 

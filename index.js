@@ -261,6 +261,10 @@ function createWindow() {
     })
 }
 
+try {
+    require('electron-reloader')(module)
+  } catch (_) {}
+
 function createMenu() {
     
     if(process.platform === 'darwin') {
