@@ -784,6 +784,10 @@ video {
   background-color: rgb(2 6 23 / var(--tw-bg-opacity));
 }
 
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
+}
+
 .bg-opacity-70 {
   --tw-bg-opacity: 0.7;
 }
@@ -794,22 +798,6 @@ video {
 
 .bg-opacity-90 {
   --tw-bg-opacity: 0.9;
-}
-
-.bg-opacity-50 {
-  --tw-bg-opacity: 0.5;
-}
-
-.bg-opacity-20 {
-  --tw-bg-opacity: 0.2;
-}
-
-.bg-opacity-10 {
-  --tw-bg-opacity: 0.1;
-}
-
-.bg-opacity-30 {
-  --tw-bg-opacity: 0.3;
 }
 
 .object-cover {
@@ -3986,8 +3974,8 @@ input:checked + .toggleSwitchSlider:before {
   fill: #ffffff;
   transition: 0.25s ease;
   cursor: pointer;
-  height: 12px;
-  width: 25px;
+  height: 25px;
+  width: 45px;
 }
 
 .mediaSVG:hover,
@@ -4021,7 +4009,7 @@ input:checked + .toggleSwitchSlider:before {
 
 #settingsSVG {
   stroke: #ffffff;
-  height: 15px;
+  height: 25px;
 }
 
 .mediaButton:hover #settingsSVG,
