@@ -1,5 +1,5 @@
 [ejs.landing]
-updateAvailableTooltip = "Update Available"
+updateAvailableTooltip = "Click to Update the Launcher"
 usernamePlaceholder = "Username"
 usernameEditButton = "Edit"
 settingsTooltip = "Settings"

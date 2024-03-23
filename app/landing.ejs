@@ -1,5 +1,5 @@
 <div id="landingContainer" style="display: none;">
-    <div class="min-h-full flex flex-col justify-between">
+    <div class="min-h-full flex flex-col justify-between relative overflow-hidden">
         <!-- Menu Bar -->
         <div class="min-w-full min-h-20 bg-slate-950 bg-opacity-70 backdrop-blur-sm flex flex-row justify-between items-center px-4 border-b-2 border-[#e89f11]">
             <div id="accountContainer" class="account flex items-center gap-2 cursor-pointer">
@@ -34,6 +34,12 @@
                     </svg>
                 </a>
             </div> 
+        </div>
+
+        <!-- Update Noty -->
+        <div id="update_container" class="absolute top-20 z-10 flex justify-center items-center min-h-7 max-h-7 min-w-full w-full bg-green-500 bg-opacity-75" update="true">
+            <p>Update Available!</p>
+            <div id="updateAvailableTooltip"><%- lang('landing.updateAvailableTooltip') %></div>
         </div>
 
         <!-- Main Content -->
@@ -81,11 +87,6 @@
                 </div>
             </div>
         </div>
-        <div id="image_seal_container" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
-            <img id="image_seal" src="assets/images/SealCircle.png"/>
-            <div id="updateAvailableTooltip"><%- lang('landing.updateAvailableTooltip') %></div>
-        </div>
-
 
         <!-- Launch Details (Validating the Files etc.) -->
         <div id="launch_details" class="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 min-w-full" >

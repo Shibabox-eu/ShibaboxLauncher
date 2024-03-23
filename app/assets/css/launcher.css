@@ -614,8 +614,8 @@ video {
   left: 50%;
 }
 
-.top-1\/2 {
-  top: 50%;
+.top-20 {
+  top: 5rem;
 }
 
 .top-7 {
@@ -624,10 +624,6 @@ video {
 
 .z-10 {
   z-index: 10;
-}
-
-.z-50 {
-  z-index: 50;
 }
 
 .-mt-3 {
@@ -670,12 +666,20 @@ video {
   height: 100%;
 }
 
+.max-h-7 {
+  max-height: 1.75rem;
+}
+
 .min-h-20 {
   min-height: 5rem;
 }
 
 .min-h-24 {
   min-height: 6rem;
+}
+
+.min-h-7 {
+  min-height: 1.75rem;
 }
 
 .min-h-full {
@@ -690,17 +694,16 @@ video {
   width: auto;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .min-w-full {
   min-width: 100%;
 }
 
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-1\/2 {
-  --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -736,6 +739,10 @@ video {
   gap: 0.5rem;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rounded-xl {
   border-radius: 0.75rem;
 }
@@ -767,6 +774,11 @@ video {
   background-color: rgb(232 159 17 / var(--tw-bg-opacity));
 }
 
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
 .bg-slate-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(2 6 23 / var(--tw-bg-opacity));
@@ -774,6 +786,10 @@ video {
 
 .bg-opacity-70 {
   --tw-bg-opacity: 0.7;
+}
+
+.bg-opacity-75 {
+  --tw-bg-opacity: 0.75;
 }
 
 .object-cover {
@@ -3748,46 +3764,46 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Logo container styles. */
 
-#image_seal_container {
+#update_container {
+  display: none;
   height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  margin-top: 50px;
 }
 
 /* Logo container styles w/ update. */
 
-#image_seal_container[update]{
+#update_container[update]{
   cursor: pointer
 }
 
-#image_seal_container[update]:before,
-#image_seal_container[update]:after {
+#update_container[update]:before,
+#update_container[update]:after {
   cursor: pointer;
   position: absolute;
   content: '';
-  height: 100%;
+  height: 20px;
   width: 100%;
-  top: 0%;
+  top: 6%;
   left: 0%;
-  border-radius: 50%;
   box-shadow: 0 0 15px #43c628;
   animation: glow-grow 4s ease-out infinite;
   background: rgba(0, 0, 0, 0.15);
 }
 
-#image_seal_container[update]:before {
+#update_container[update]:before {
   animation-delay: 2s;
 }
 
 /* Update available tooltip styles. */
 
 #updateAvailableTooltip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   visibility: hidden;
   opacity: 0;
-  width: 100px;
-  height: 15px;
+  width: 200px;
+  height: 25px;
   background-color: rgb(0, 0, 0);
   color: #fff;
   text-align: center;
@@ -3796,7 +3812,8 @@ input:checked + .toggleSwitchSlider:before {
   position: absolute;
   z-index: 1;
   top: 115%;
-  left: -17.5px;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Avenir Medium';
   font-size: 12px;
   transition: visibility 0s linear 0.25s, opacity 0.25s ease;
@@ -3813,7 +3830,7 @@ input:checked + .toggleSwitchSlider:before {
   border-color: transparent transparent rgb(0, 0, 0) transparent;
 }
 
-#image_seal_container[update]:hover #updateAvailableTooltip {
+#update_container[update]:hover #updateAvailableTooltip {
   visibility: visible;
   opacity: 1;
   transition-delay: 0s;
