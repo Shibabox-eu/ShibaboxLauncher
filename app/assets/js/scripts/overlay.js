@@ -76,6 +76,7 @@ function toggleOverlay(toggleState, dismissable = false, content = 'overlayConte
     bindOverlayKeys(toggleState, content, dismissable)
     if(toggleState){
         document.getElementById('main').setAttribute('overlay', true)
+        document.getElementById('frameBarLogo').style.display = 'none';
         // Make things untabbable.
         $('#main *').attr('tabindex', '-1')
         $('#' + content).parent().children().hide()
@@ -95,6 +96,7 @@ function toggleOverlay(toggleState, dismissable = false, content = 'overlayConte
         })
     } else {
         document.getElementById('main').removeAttribute('overlay')
+        document.getElementById('frameBarLogo').style.display = 'block';
         // Make things tabbable.
         $('#main *').removeAttr('tabindex')
         $('#overlayContainer').fadeOut({
