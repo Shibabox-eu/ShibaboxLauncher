@@ -41,9 +41,11 @@ let currentView
 function switchView(current, next, currentFadeTime = 500, nextFadeTime = 500, onCurrentFade = () => {}, onNextFade = () => {}){
     currentView = next
     VIEWS.landing == next ? null : $('#frameBarLogo').fadeOut(currentFadeTime);
+    VIEWS.landing == next ? null : document.getElementById('frameBar').style.backgroundColor = 'rgba(2, 6, 23, 1)';
     $(`${current}`).fadeOut(currentFadeTime, async () => {
         await onCurrentFade()
         VIEWS.landing == next ? $('#frameBarLogo').fadeIn(nextFadeTime) : null;
+        VIEWS.landing == next ? document.getElementById('frameBar').style.backgroundColor = 'rgba(2, 6, 23, 0.7)' : null;
         $(`${next}`).fadeIn(nextFadeTime, async () => {
             await onNextFade()
         })

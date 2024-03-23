@@ -395,7 +395,6 @@ body, button {
     height: 100%;
     width: 100%;
     transition: filter 0.25s ease;
-    background: rgba(0, 0, 0, 0.50);
 }
 
 /* Login cancel button styles. */
@@ -897,7 +896,6 @@ body, button {
     height: 100%;
     width: 100%;
     transition: filter 0.25s ease;
-    background: rgba(0, 0, 0, 0.50);
 }
 
 #waitingContent {
@@ -1063,7 +1061,7 @@ body, button {
     position: relative;
     height: 100%;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.50);
+    justify-content: space-between;
     transition: background-color 0.25s cubic-bezier(.02, .01, .47, 1);
 }
 
@@ -1085,7 +1083,7 @@ body, button {
 #settingsContainerLeft {
     padding-top: 4%;
     height: 100%;
-    width: 25%;
+    width: 20%;
     box-sizing: border-box;
 }
 
@@ -1143,6 +1141,7 @@ body, button {
     cursor: default;
     color: white;
     text-shadow: none;
+    border-left: 5px #e89f11 solid;
 }
 
 /* Div to add some space between nav items. */
@@ -3062,7 +3061,6 @@ input:checked + .toggleSwitchSlider:before {
     justify-content: center;
     width: 100%;
     height: calc(100% - 22px);
-    background: rgba(0, 0, 0, 0.50);
 }
 
 /* Main overlay content. */
