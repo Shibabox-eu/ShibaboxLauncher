@@ -1000,7 +1000,7 @@ body, button {
 }
 
 .loginOptionButton {
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(126, 126, 126, 0.57);
     border-radius: 3px;
     height: 50px;
@@ -1239,7 +1239,7 @@ body, button {
 
 /* Selected server content container */
 .settingsSelServContainer {
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     width: 75%;
     border-radius: 3px;
     display: flex;
@@ -1299,7 +1299,7 @@ body, button {
 #settingsContainer input[type=number],
 #settingsContainer input[type=text] {
     color: white;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     border: 1px solid rgba(126, 126, 126, 0.57);
     font-family: 'Avenir Book';
@@ -1560,7 +1560,7 @@ input:checked + .toggleSwitchSlider:before {
 /* Auth account shared styles. */
 .settingsAuthAccount {
     display: flex;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     border: 1px solid rgba(126, 126, 126, 0.57);
 }
@@ -1724,7 +1724,7 @@ input:checked + .toggleSwitchSlider:before {
 #settingsOptModsContent,
 #settingsDropinModsContent {
     font-size: 12px;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     color: white;
 }
@@ -1811,7 +1811,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Button to open the mods folder for drop-in mods. */
 #settingsDropinFileSystemButton {
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(126, 126, 126, 0.57);
     border-radius: 3px;
     height: 50px;
@@ -1873,7 +1873,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Button to add shaderpacks. */
 #settingsShaderpackButton {
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(126, 126, 126, 0.57);
     border-radius: 3px;
     cursor: pointer;
@@ -1956,7 +1956,7 @@ input:checked + .toggleSwitchSlider:before {
 /* Shared styles between options and selection div. */
 .settingsSelectOptions div,
 .settingsSelectSelected {
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     border-style: solid;
     border-color: rgba(126, 126, 126, 0.57);
     color: #ffffff;
@@ -2144,7 +2144,7 @@ input:checked + .toggleSwitchSlider:before {
 #settingsAboutCurrentContainer {
     display: flex;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(126, 126, 126, 0.57);
     border-radius: 3px;
     width: 75%;
@@ -2244,7 +2244,7 @@ input:checked + .toggleSwitchSlider:before {
 .settingsChangelogContainer {
     display: flex;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(126, 126, 126, 0.57);
     border-radius: 3px;
     width: 75%;
@@ -2346,7 +2346,7 @@ input:checked + .toggleSwitchSlider:before {
 #settingsUpdateStatusContainer {
     display: flex;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(126, 126, 126, 0.57);
     border-radius: 3px;
     width: 75%;
@@ -3179,7 +3179,7 @@ input:checked + .toggleSwitchSlider:before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 75%;
+    height: 100%;
 }
 
 /* Server selection header. */
@@ -3200,7 +3200,7 @@ input:checked + .toggleSwitchSlider:before {
     align-items: center;
     justify-content: center;
     max-height: 65%;
-    min-height: 40%;
+    min-height: 65%;
 }
 
 /* Scrollable div which lists the available servers. */
@@ -3227,21 +3227,25 @@ input:checked + .toggleSwitchSlider:before {
 .serverListing {
     border: none;
     padding: 0px;
-    width: 375px;
+    width: 300px;
     min-height: 60px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    opacity: 0.6;
     transition: 0.25s ease;
     cursor: pointer;
     position: relative;
-    background: rgba(131, 131, 131, 0.25);
+    background-color: #02061785;
 }
 .serverListing[selected] {
     cursor: default;
     opacity: 1.0;
+    border-radius: 0.375rem;
+    border:solid #ffa500ba 1px;
+    background-color: #020617ee;
 }
+
+.serverListing[selected] .serverName {
+    color: #e89f11;
+}
+
 .serverListing:hover,
 .serverListing:focus {
     outline: none;
@@ -3261,7 +3265,7 @@ input:checked + .toggleSwitchSlider:before {
     transition: 0.25s ease;
     cursor: pointer;
     position: relative;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
 }
 .accountListing[selected] {
     cursor: default;
@@ -3278,20 +3282,6 @@ input:checked + .toggleSwitchSlider:before {
     height: 100%;
     width: 100%;
     padding-left: 10px;
-}
-
-/* Add spacing between server listings. */
-#serverSelectListScrollable > .serverListing:not(:first-child):not(:last-child),
-#accountSelectListScrollable > .accountListing:not(:first-child):not(:last-child) {
-    margin: 5px 0px;
-}
-#serverSelectListScrollable > .serverListing:first-child,
-#accountSelectListScrollable > .accountListing:first-child {
-    margin-bottom: 5px;
-}
-#serverSelectListScrollable > .serverListing:last-child,
-#accountSelectListScrollable > .accountListing:last-child {
-    margin-top: 5px;
 }
 
 /* Server listing image. */
@@ -3400,33 +3390,6 @@ input:checked + .toggleSwitchSlider:before {
     justify-content: center;
     align-items: center;
     margin-top: 25px;
-}
-
-/* Server selection confirm button styles. */
-#serverSelectConfirm,
-#accountSelectConfirm {
-    background: none;
-    border: 1px solid #ffffff;
-    color: white;
-    font-family: 'Avenir Medium';
-    font-weight: bold;
-    border-radius: 2px;
-    padding: 0px 8.1px;
-    cursor: pointer;
-    transition: 0.25s ease;
-    min-height: 20.67px;
-}
-#serverSelectConfirm:hover,
-#serverSelectConfirm:focus,
-#accountSelectConfirm:hover,
-#accountSelectConfirm:focus {
-    box-shadow: 0px 0px 10px 0px #fff;
-    outline: none;
-}
-#serverSelectConfirm:active,
-#accountSelectConfirm:active {
-    border-color: rgba(255, 255, 255, 0.75);
-    color: rgba(255, 255, 255, 0.75);
 }
 
 /* Server selection cancel button styles. */
