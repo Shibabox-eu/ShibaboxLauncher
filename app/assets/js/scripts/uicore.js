@@ -107,8 +107,9 @@ function changeAllowPrerelease(val){
 
 function showUpdateUI(info){
     //TODO Make this message a bit more informative `${info.version}`
-    document.getElementById('image_seal_container').setAttribute('update', true)
-    document.getElementById('image_seal_container').onclick = () => {
+    document.getElementById('update_container').style.display = 'block'
+    document.getElementById('update_container').setAttribute('update', true)
+    document.getElementById('update_container').onclick = () => {
         /*setOverlayContent('Update Available', 'A new update for the launcher is available. Would you like to install now?', 'Install', 'Later')
         setOverlayHandler(() => {
             if(!isDev){
@@ -184,10 +185,10 @@ document.addEventListener('readystatechange', function () {
         //const targetWidth2 = document.getElementById("server_selection").getBoundingClientRect().width
         //const targetWidth3 = document.getElementById("launch_button").getBoundingClientRect().width
 
-        document.getElementById('launch_details').style.maxWidth = 266.01
-        document.getElementById('launch_progress').style.width = 170.8
-        document.getElementById('launch_details_right').style.maxWidth = 170.8
-        document.getElementById('launch_progress_label').style.width = 53.21
+        //document.getElementById('launch_details').style.maxWidth = 266.01
+        //document.getElementById('launch_progress').style.width = 170.8
+        //document.getElementById('launch_details_right').style.maxWidth = 170.8
+        //Sdocument.getElementById('launch_progress_label').style.width = 53.21
         
     }
 

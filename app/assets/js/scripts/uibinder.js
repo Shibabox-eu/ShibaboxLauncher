@@ -40,8 +40,12 @@ let currentView
  */
 function switchView(current, next, currentFadeTime = 500, nextFadeTime = 500, onCurrentFade = () => {}, onNextFade = () => {}){
     currentView = next
+    VIEWS.landing == next ? null : $('#frameBarLogo').fadeOut(currentFadeTime);
+    VIEWS.landing == next ? null : document.getElementById('frameBar').style.backgroundColor = 'rgba(2, 6, 23, 1)';
     $(`${current}`).fadeOut(currentFadeTime, async () => {
         await onCurrentFade()
+        VIEWS.landing == next ? $('#frameBarLogo').fadeIn(nextFadeTime) : null;
+        VIEWS.landing == next ? document.getElementById('frameBar').style.backgroundColor = 'rgba(2, 6, 23, 0.7)' : null;
         $(`${next}`).fadeIn(nextFadeTime, async () => {
             await onNextFade()
         })
@@ -68,7 +72,8 @@ async function showMainUI(data){
     updateSelectedServer(data.getServerById(ConfigManager.getSelectedServer()))
     refreshServerStatus()
     setTimeout(() => {
-        document.getElementById('frameBar').style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+        document.getElementById('frameBar').style.backgroundColor = 'rgba(2, 6, 23, 0.7)'
+        $('#frameBarLogo').fadeIn(0)
         document.body.style.backgroundImage = `url('assets/images/backgrounds/${document.body.getAttribute('bkid')}.jpg')`
         $('#main').show()
 
@@ -87,6 +92,7 @@ async function showMainUI(data){
             if(isLoggedIn){
                 currentView = VIEWS.landing
                 $(VIEWS.landing).fadeIn(1000)
+                $('#frameBarLogo').fadeIn(1000)
             } else {
                 loginOptionsCancelEnabled(false)
                 loginOptionsViewOnLoginSuccess = VIEWS.landing
@@ -103,10 +109,6 @@ async function showMainUI(data){
         }, 250)
         
     }, 750)
-    // Disable tabbing to the news container.
-    initNews().then(() => {
-        $('#newsContainer *').attr('tabindex', '-1')
-    })
 }
 
 function showFatalStartupError(){
@@ -135,7 +137,6 @@ function showFatalStartupError(){
 function onDistroRefresh(data){
     updateSelectedServer(data.getServerById(ConfigManager.getSelectedServer()))
     refreshServerStatus()
-    initNews()
     syncModConfigurations(data)
     ensureJavaSettings(data)
 }
