@@ -5,9 +5,9 @@
   "description": "Modded Minecraft Launcher",
   "author": "Daniel Scalzi (https://github.com/dscalzi/) modified by Shibetendo64",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/Shibetendo64/ShibaboxLauncher",
+  "homepage": "https://github.com/Shibabox-eu/ShibaboxLauncher",
   "bugs": {
-    "url": "https://github.com/Shibetendo64/ShibaboxLauncher/issues"
+    "url": "https://github.com/Shibabox-eu/ShibaboxLauncher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -52,6 +52,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shibetendo64/ShibaboxLauncher.git"
+    "url": "git+https://github.com/Shibabox-eu/ShibaboxLauncher.git"
   }
 }
