@@ -589,7 +589,6 @@ async function dlAsync(login = true) {
         // Listener for Discord RPC.
         const gameStateChange = function(data){
             data = data.trim()
-            console.log("Discord RPC: " + data);
             if(SERVER_JOINED_REGEX.test(data) || SERVER_JOINED_REGEX_2.test(data)){
                 DiscordWrapper.updateDetails(Lang.queryJS('landing.discord.joined'))
             } else if(GAME_JOINED_REGEX.test(data)){
