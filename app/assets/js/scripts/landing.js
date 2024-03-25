@@ -558,6 +558,7 @@ async function dlAsync(login = true) {
 
         // const SERVER_JOINED_REGEX = /\[.+\]: \[CHAT\] [a-zA-Z0-9_]{1,16} joined the game/
         const SERVER_JOINED_REGEX = new RegExp(`\\[.+\\]: \\[CHAT\\] ${authUser.displayName} joined the game`)
+        const SERVER_JOINED_REGEX_2 = /\[\d{2}:\d{2}:\d{2}\] \[Render thread\/INFO\] \[minecraft\/AdvancementList\]: Loaded \d+ advancements/
 
         const onLoadComplete = () => {
             toggleLaunchArea(false)
@@ -588,7 +589,8 @@ async function dlAsync(login = true) {
         // Listener for Discord RPC.
         const gameStateChange = function(data){
             data = data.trim()
-            if(SERVER_JOINED_REGEX.test(data)){
+            console.log("Discord RPC: " + data);
+            if(SERVER_JOINED_REGEX.test(data) || SERVER_JOINED_REGEX_2.test(data)){
                 DiscordWrapper.updateDetails(Lang.queryJS('landing.discord.joined'))
             } else if(GAME_JOINED_REGEX.test(data)){
                 DiscordWrapper.updateDetails(Lang.queryJS('landing.discord.joining'))
