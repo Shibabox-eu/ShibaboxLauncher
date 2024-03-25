@@ -4,7 +4,7 @@
 
 <em><h5 align="center">A fork of Helios (formerly Electron Launcher)</h5></em>
 
-[<p align="center"><img src="https://img.shields.io/github/actions/workflow/status/dscalzi/HeliosLauncher/build.yml?branch=master&style=for-the-badge" alt="gh actions">](https://github.com/dscalzi/HeliosLauncher/actions) [<img src="https://img.shields.io/github/downloads/dscalzi/HeliosLauncher/total.svg?style=for-the-badge" alt="downloads">](https://github.com/dscalzi/HeliosLauncher/releases) <img src="https://forthebadge.com/images/badges/winter-is-coming.svg"  height="28px" alt="winter-is-coming"></p>
+[<p align="center"><img src="https://img.shields.io/github/actions/workflow/status/dscalzi/HeliosLauncher/build.yml?branch=master&style=for-the-badge" alt="gh actions">](https://github.com/Shibabox-eu/ShibaboxLauncher/actions) [<img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/Shibabox-eu/ShibaboxLauncher/total?style=flat-square">](https://github.com/Shibabox-eu/ShibaboxLauncher/releases) </p>
 
 <p align="center">Join modded servers without worrying about installing Java, Forge, or other mods. We'll handle that for you.</p>
 
@@ -42,10 +42,7 @@ You can download from [GitHub Releases](https://github.com/Shibabox-eu/ShibaboxL
 
 #### Latest Release
 
-[![](https://img.shields.io/github/release/dscalzi/HeliosLauncher.svg?style=flat-square)](https://github.com/Shibabox-eu/ShibaboxLauncher/releases)
-
-#### Latest Pre-Release
-[![](https://img.shields.io/github/release/dscalzi/HeliosLauncher/all.svg?style=flat-square)](https://github.com/Shibabox-eu/ShibaboxLauncher/releases)
+[![](https://img.shields.io/github/v/release/Shibabox-eu/ShibaboxLauncher?style=flat-square)](https://github.com/Shibabox-eu/ShibaboxLauncher/releases)
 
 **Supported Platforms**
 
