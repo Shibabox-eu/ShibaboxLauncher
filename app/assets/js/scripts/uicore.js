@@ -107,7 +107,7 @@ function changeAllowPrerelease(val){
 
 function showUpdateUI(info){
     //TODO Make this message a bit more informative `${info.version}`
-    document.getElementById('update_container').style.display = 'block'
+    document.getElementById('update_container').style.display = 'flex'
     document.getElementById('update_container').setAttribute('update', true)
     document.getElementById('update_container').onclick = () => {
         /*setOverlayContent('Update Available', 'A new update for the launcher is available. Would you like to install now?', 'Install', 'Later')
