@@ -203,8 +203,8 @@ checkConsoleForDetails = "Please check the console (CTRL + Shift + i) for more d
 
 [js.landing.discord]
 loading = "Loading game.."
-joining = "Sailing to Westeros!"
-joined = "Exploring the Realm!"
+joining = "Awakening in a new World..."
+joined = "Adventuring through the Wildlands!"
 
 [js.overlay]
 dismiss = "Dismiss"
