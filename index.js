@@ -12,6 +12,7 @@ const semver                            = require('semver')
 const { pathToFileURL }                 = require('url')
 const { AZURE_CLIENT_ID, MSFT_OPCODE, MSFT_REPLY_TYPE, MSFT_ERROR, SHELL_OPCODE } = require('./app/assets/js/ipcconstants')
 const LangLoader                        = require('./app/assets/js/langloader')
+const DiscordWrapper                    = require('./app/assets/js//discordwrapper')
 
 // Setup Lang
 LangLoader.setupLanguage()
@@ -259,7 +260,37 @@ function createWindow() {
     win.on('closed', () => {
         win = null
     })
+
+    //Initialise Discord RPC.
+    DiscordWrapper.initRPC();
+
+    win.on('focus', function () {
+        DiscordWrapper.updateActivity({
+            details: "In the Launcher",
+            startTimestamp: new Date().getTime()
+        })
+    })
+
+    win.on('blur', function () {
+        DiscordWrapper.updateActivity({
+            details: "Idle...",
+            startTimestamp: new Date().getTime()
+        })
+    })
 }
+
+ipcMain.on("RPC:updateActivity", (event, activity) => {
+    DiscordWrapper.updateActivity(activity);
+});
+
+ipcMain.on("RPC:updateDetails", (event, details) => {
+    DiscordWrapper.updateDetails(details);
+});
+
+ipcMain.on("RPC:updateState", (event, state) => {
+    DiscordWrapper.updateState(state);
+});
+
 
 try {
     require('electron-reloader')(module)
@@ -351,6 +382,7 @@ app.on('ready', createMenu)
 app.on('window-all-closed', () => {
     // On macOS it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
+    DiscordWrapper.shutdownRPC()
     if (process.platform !== 'darwin') {
         app.quit()
     }

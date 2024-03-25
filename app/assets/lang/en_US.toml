@@ -125,6 +125,7 @@ continueButton = "CONTINUE"
 
 
 [js.discord]
+starting = "Starting the Launcher.."
 waiting = "Waiting for Client.."
 state = "Server: {shortId}"
 

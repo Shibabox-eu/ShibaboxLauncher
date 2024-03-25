@@ -28,7 +28,6 @@ const {
 }                             = require('helios-core/java')
 
 // Internal Requirements
-const DiscordWrapper          = require('./assets/js/discordwrapper')
 const ProcessBuilder          = require('./assets/js/processbuilder')
 
 // Launch Elements
@@ -436,8 +435,6 @@ async function downloadJava(effectiveJavaOptions, launchAfter = true) {
 
 // Keep reference to Minecraft Process
 let proc
-// Is DiscordRPC enabled
-let hasRPC = false
 // Joined server regex
 // Change this if your server uses something different.
 const GAME_JOINED_REGEX = /\[.+\]: Sound engine started/
@@ -562,10 +559,8 @@ async function dlAsync(login = true) {
 
         const onLoadComplete = () => {
             toggleLaunchArea(false)
-            if(hasRPC){
-                DiscordWrapper.updateDetails(Lang.queryJS('landing.discord.loading'))
-                proc.stdout.on('data', gameStateChange)
-            }
+            ipcRenderer.send("RPC:updateDetails", Lang.queryJS('landing.discord.loading'));
+            proc.stdout.on('data', gameStateChange)
             proc.stdout.removeListener('data', tempListener)
             proc.stderr.removeListener('data', gameErrorListener)
         }
@@ -590,9 +585,9 @@ async function dlAsync(login = true) {
         const gameStateChange = function(data){
             data = data.trim()
             if(SERVER_JOINED_REGEX.test(data) || SERVER_JOINED_REGEX_2.test(data)){
-                DiscordWrapper.updateDetails(Lang.queryJS('landing.discord.joined'))
+                ipcRenderer.send("RPC:updateDetails", Lang.queryJS('landing.discord.joined'));
             } else if(GAME_JOINED_REGEX.test(data)){
-                DiscordWrapper.updateDetails(Lang.queryJS('landing.discord.joining'))
+                ipcRenderer.send("RPC:updateDetails", Lang.queryJS('landing.discord.joining'));
             }
         }
 
@@ -615,15 +610,26 @@ async function dlAsync(login = true) {
             setLaunchDetails(Lang.queryJS('landing.dlAsync.doneEnjoyServer'))
 
             // Init Discord Hook
-            if(distro.rawDistribution.discord != null && serv.rawServer.discord != null){
-                DiscordWrapper.initRPC(distro.rawDistribution.discord, serv.rawServer.discord)
-                hasRPC = true
-                proc.on('close', (code, signal) => {
-                    loggerLaunchSuite.info('Shutting down Discord Rich Presence..')
-                    DiscordWrapper.shutdownRPC()
-                    hasRPC = false
-                    proc = null
-                })
+            if(serv.rawServer.discord != null){
+                ipcRenderer.send(
+                    "RPC:updateActivity", {
+                        details: Lang.queryJS('discord.waiting'),
+                        state: Lang.queryJS('discord.state', {shortId: serv.rawServer.discord.shortId}),
+                        largeImageKey: serv.rawServer.discord.largeImageKey,
+                        largeImageText: serv.rawServer.discord.largeImageText,
+                        startTimestamp: new Date().getTime(),
+                    }
+                );
+            } else {
+                ipcRenderer.send(
+                    "RPC:updateActivity", {
+                        details: "Starting Game...",
+                        state: serv.rawServer.name,
+                        largeImageKey: distro.rawDistribution.discord.smallImageKey,
+                        largeImageText: distro.rawDistribution.discord.smallImageText,
+                        startTimestamp: new Date().getTime(),
+                    }
+                );
             }
 
         } catch(err) {

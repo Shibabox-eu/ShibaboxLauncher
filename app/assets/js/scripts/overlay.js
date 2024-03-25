@@ -122,6 +122,13 @@ function toggleOverlay(toggleState, dismissable = false, content = 'overlayConte
 async function toggleServerSelection(toggleState){
     await prepareServerSelectionList()
     toggleOverlay(toggleState, true, 'serverSelectContent')
+
+    ipcRenderer.send(
+        "RPC:updateActivity", {
+            details: "Selecting a Modpack",
+            startTimestamp: new Date().getTime(),
+        }
+    );
 }
 
 /**
