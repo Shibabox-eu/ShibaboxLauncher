@@ -4,7 +4,7 @@
 
 <em><h5 align="center">A fork of Helios (formerly Electron Launcher)</h5></em>
 
-[<p align="center"><img src="https://img.shields.io/github/actions/workflow/status/dscalzi/HeliosLauncher/build.yml?branch=master&style=for-the-badge" alt="gh actions">](https://github.com/Shibabox-eu/ShibaboxLauncher/actions) [<img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/Shibabox-eu/ShibaboxLauncher/total?style=for-the-badge">](https://github.com/Shibabox-eu/ShibaboxLauncher/releases) </p>
+[<p align="center"><img alt="GH Actions" src="https://img.shields.io/github/actions/workflow/status/Shibabox-eu/ShibaboxLauncher/build.yml?style=for-the-badge">](https://github.com/Shibabox-eu/ShibaboxLauncher/actions) [<img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/Shibabox-eu/ShibaboxLauncher/total?style=for-the-badge">](https://github.com/Shibabox-eu/ShibaboxLauncher/releases) </p>
 
 <p align="center">Join modded servers without worrying about installing Java, Forge, or other mods. We'll handle that for you.</p>
 
