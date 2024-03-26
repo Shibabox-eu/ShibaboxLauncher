@@ -50,10 +50,10 @@ If you download from the [Releases](https://github.com/Shibabox-eu/ShibaboxLaunc
 
 | Platform | File |
 | -------- | ---- |
-| Windows x64 | `Shiba-Box-Launcher-setup-VERSION.exe` |
-| macOS x64 | `Shiba-Box-Launcher-setup-VERSION-x64.dmg` |
-| macOS arm64 | `Shiba-Box-Launcher-setup-VERSION-arm64.dmg` |
-| Linux x64 | `Shiba-Box-Launcher-setup-VERSION.AppImage` |
+| Windows x64 | `Shibabox-Launcher-setup-VERSION.exe` |
+| macOS x64 | `Shibabox-Launcher-setup-VERSION-x64.dmg` |
+| macOS arm64 | `Shibabox-Launcher-setup-VERSION-arm64.dmg` |
+| Linux x64 | `Shibabox-Launcher-setup-VERSION.AppImage` |
 
 ## Console
 
