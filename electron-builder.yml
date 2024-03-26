@@ -1,5 +1,5 @@
 appId: 'shibaboxlauncher'
-productName: 'Shiba Box Launcher'
+productName: 'Shibabox Launcher'
 artifactName: '${productName}-setup-${version}.${ext}'
 
 copyright: 'Copyright © 2018-2024 Daniel Scalzi'

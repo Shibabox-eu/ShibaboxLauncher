@@ -1,7 +1,7 @@
 # Custom Language File for Launcher Customizer
 
 [ejs.app]
-title = "Shiba Box Launcher"
+title = "Shibabox Launcher"
 
 [ejs.landing]
 mediaGitHubURL = "https://github.com/Shibabox-eu/ShibaboxLauncher"
