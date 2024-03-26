@@ -34,7 +34,11 @@ This is not an exhaustive list. Download and install the launcher to gauge all i
 
 #### Need Help? [Check the wiki.][wiki]
 
-#### Like the project? Leave a ⭐ star on the repository!
+## Design Restriction Notice:
+
+The design elements created by Shibabox (including but not limited to graphics, layout, and user interface) are protected by copyright law and may not be used, copied, modified, or distributed without explicit permission from Shibabox.
+
+These design restrictions are separate from and do not alter the permissions granted by the accompanying MIT License for the underlying software code.
 
 ## Downloads
 
